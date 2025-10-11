@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7js2vb0l3snl"]
+
+[ext_resource type="Texture2D" uid="uid://ctnk3xu32x0wr" path="res://assets/Tiles/Tile/14.png" id="1_3yc0d"]
+[ext_resource type="Texture2D" uid="uid://read2krsvq2g" path="res://assets/Tiles/Tile/15.png" id="2_ihjil"]
+[ext_resource type="Texture2D" uid="uid://nvyncarpua3" path="res://assets/Tiles/Tile/16.png" id="3_pxu8x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trq3g"]
+size = Vector2(383, 60)
+
+[node name="Floating hive" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3yc0d")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(128, 0)
+texture = ExtResource("2_ihjil")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(255, 0)
+texture = ExtResource("3_pxu8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(127.5, -19)
+shape = SubResource("RectangleShape2D_trq3g")

@@ -15,9 +15,12 @@ sprite_frames = ExtResource("2_l6hhd")
 unique_name_in_owner = true
 sprite_frames = ExtResource("2_l6hhd")
 animation = &"down"
+frame_progress = 0.68886226
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-32, 0)
 shape = SubResource("RectangleShape2D_3dfps")
+
+[node name="VictorySound" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

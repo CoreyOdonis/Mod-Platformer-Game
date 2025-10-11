@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvqpj5h4abdud"]
+
+[ext_resource type="Texture2D" uid="uid://sjd143a3qlth" path="res://assets/Tiles/Objects/Stone.png" id="1_177fh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymqyl"]
+size = Vector2(122, 74)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_177fh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_ymqyl")

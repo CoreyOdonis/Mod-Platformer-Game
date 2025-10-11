@@ -154,7 +154,7 @@ stretch_mode = 5
 [node name="Label2" type="Label" parent="Start"]
 layout_mode = 2
 size_flags_horizontal = 4
-text = "Press any key to start"
+text = "Press P to pause/play and press any key to start"
 
 [node name="WinEnding" type="Label" parent="."]
 unique_name_in_owner = true

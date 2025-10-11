@@ -29,13 +29,14 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -2352.0
-offset_right = 5129.0
+offset_right = 3830.0
 offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.980392, 0.980392, 0.980392, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+scale = Vector2(0.7499511, 1)
 texture = SubResource("GradientTexture2D_ljotv")
 centered = false
 

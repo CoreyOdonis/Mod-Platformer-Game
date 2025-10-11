@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://7i5oxwnnbsol"]
+
+[ext_resource type="Texture2D" uid="uid://bnro3mu6bc8si" path="res://assets/Tiles/Objects/StoneBlock.png" id="1_ged7t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qs874"]
+size = Vector2(100, 101)
+
+[node name="Stone Block" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ged7t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qs874")

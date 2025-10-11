@@ -104,3 +104,7 @@ func _check_win_conditions(flag: Flag):
 		return false
 
 	return true
+
+
+func _on_RestartButton_pressed():
+	get_tree().reload_current_scene()
