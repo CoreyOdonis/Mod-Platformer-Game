@@ -1,6 +1,9 @@
 @tool
 extends Node
 
+var last_checkpoint_position: Vector2 = Vector2.ZERO
+var default_spawn_position: Vector2 = Vector2.ZERO
+
 signal coin_collected
 signal flag_raised(flag: Flag)
 signal lives_changed

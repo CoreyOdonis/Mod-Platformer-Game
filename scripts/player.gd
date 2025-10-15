@@ -216,10 +216,11 @@ func _physics_process(delta):
 
 
 func reset():
-	position = original_position
+	position = GameManager.respawn_point if GameManager.respawn_point != Vector2.ZERO else original_position
 	velocity = Vector2.ZERO
 	coyote_timer = 0
 	jump_buffer_timer = 0
+
 
 @onready var _game_over_sound: AudioStreamPlayer = $GameOverSound
 func _on_lives_changed():
@@ -228,3 +229,29 @@ func _on_lives_changed():
 	else:
 		if not _game_over_sound.playing:
 			_game_over_sound.play()
+		
+		# 🧩 Find the UI node and show Game Over menu
+		var ui = get_tree().get_first_node_in_group("ui")
+		if ui:
+			ui.show_game_over()
+		else:
+			print("⚠️ UI node not found — make sure it’s in the 'ui' group.")
+
+
+func respawn():
+	get_tree().paused = false
+	var respawn_position = Global.last_checkpoint_position
+	if respawn_position == Vector2.ZERO:
+		respawn_position = Global.default_spawn_position
+
+	global_position = respawn_position
+	# Reset velocity, animations, etc.
+
+func die():
+	if GameManager.respawn_point != Vector2.ZERO:
+		global_position = GameManager.respawn_point
+		velocity = Vector2.ZERO
+		print("🔄 Player respawned at checkpoint:", GameManager.respawn_point)
+	else:
+		print("⚠️ No checkpoint saved. Reloading scene.")
+		get_tree().reload_current_scene()

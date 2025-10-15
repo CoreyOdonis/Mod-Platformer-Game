@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Global="*res://scripts/global.gd"
+GameManager="*res://GameManager.gd"
 
 [display]
 
@@ -26,7 +27,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/window_width_override=960
 window/size/window_height_override=540
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 
 [dotnet]
 

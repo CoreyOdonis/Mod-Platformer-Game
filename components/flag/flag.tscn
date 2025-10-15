@@ -14,8 +14,8 @@ sprite_frames = ExtResource("2_l6hhd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = ExtResource("2_l6hhd")
-animation = &"down"
-frame_progress = 0.68886226
+animation = &"up"
+frame_progress = 0.62957513
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-32, 0)

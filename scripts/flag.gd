@@ -2,6 +2,11 @@
 class_name Flag
 extends Area2D
 
+@onready var animated_sprite = $AnimatedSprite2D
+@onready var ui = get_node("/root/Main/UI")
+
+var player_reached_flag := false
+
 enum FlagPosition {
 	DOWN,
 	UP,
@@ -40,7 +45,12 @@ func _ready():
 	_set_flag_position(flag_position)
 
 
-func _on_body_entered(_body):
-	if flag_position == FlagPosition.DOWN:
-		flag_position = FlagPosition.UP
-		Global.raise_flag(self)
+func _on_body_entered(body):
+	if body.is_in_group("players") and not player_reached_flag:
+		player_reached_flag = true
+		if animated_sprite:
+			animated_sprite.play("up")
+		if ui:
+			ui.show_win_message()
+		if body.has_method("stop_movement"):
+			body.stop_movement()
