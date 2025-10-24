@@ -76,7 +76,7 @@ func _on_restart_pressed() -> void:
 
 	# ✅ Restart from restart_scene_path (auto-assigned or manually set)
 	if restart_scene_path != "":
-		get_tree().change_scene_to_file(restart_scene_path)
+		get_tree().change_scene_to_file("res://levels/level_1.tscn")
 	else:
 		push_warning("UI: restart_scene_path not set or could not be auto-assigned.")
 
